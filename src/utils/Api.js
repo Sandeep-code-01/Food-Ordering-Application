@@ -263,7 +263,7 @@ const restaurants = [
 
   /* IDs 8 to 24 – SAME STRUCTURE (SAFE) */
 
-  {
+{
     id: 8,
     name: "Food Junction",
     cuisines: ["Multi Cuisine"],
@@ -298,8 +298,8 @@ const restaurants = [
         image:"https://media.istockphoto.com/id/2228673331/photo/bacon-cheeseburger-with-french-fries.webp?a=1&b=1&s=612x612&w=0&k=20&c=7Tdj0huTek6MWiJbnHGwDCqGSVdaKdovtLiQ-ISNFl8="
       }]
     }
-  },
-  {
+},
+{
   id: 9,
   name: "Punjabi Tadka",
   cuisines: ["Punjabi", "Indian"],
@@ -465,11 +465,22 @@ const restaurants = [
   price: "₹580",
   image: "https://media.istockphoto.com/id/1400256468/photo/mix-vegetable-kathi-roll.webp?a=1&b=1&s=612x612&w=0&k=20&c=lEAqXmWXQJeaY_1dbah56qRGmRx2EukJ2u-skGVYCZ0=",
   menu: {
-    Recommended: [{ name: "Paneer Roll", price: "₹180", avgRating: 4.3,
+    Recommended: [{ name: "Paneer Roll", price: "₹280", avgRating: 4.1,
       image:"https://media.istockphoto.com/id/1352474720/photo/fresh-paneer-roll-with-fresh-tomatos-salad-cheese-and-onions-isolated-on-bright-blue.webp?a=1&b=1&s=612x612&w=0&k=20&c=HHeBNencFEcT2ZplHH2SJ-5us8L-m8GYHmfMhoMuzaw="
-     }],
-    Drinks: [{ name: "Lemon Soda", price: "₹100", avgRating: 4.2 }],
-    "Our Special": [{ name: "Loaded Cheese Roll", price: "₹240", avgRating: 4.5 }]
+    },
+    { name: "Kathi Roll", price: "₹380", avgRating: 4.1,
+      image:"https://images.unsplash.com/photo-1604908816649-c8bdfc3ca68b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9sbHxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    { name: "Noodle Roll", price: "₹480", avgRating: 4.3,
+      image:"https://media.istockphoto.com/id/1209898811/photo/chapati-wrap-with-cheese-vegetarian-food.webp?a=1&b=1&s=612x612&w=0&k=20&c=jeul4k7jt8lmGG6Lo8dlftaz7CxTihmgkNbucrN3yrE="
+    }
+    ],
+    Drinks: [{ name: "Lemon Soda", price: "₹100", avgRating: 4.2,
+      image:"https://plus.unsplash.com/premium_photo-1721780793069-5576631f1b46?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGVtb24lMjBzb2RhfGVufDB8fDB8fHww"
+    }],
+    "Our Special": [{ name: "Loaded Cheese Roll", price: "₹240", avgRating: 4.5,
+      image:"https://www.spendwithpennies.com/wp-content/uploads/2022/04/SWP-Update-Grilled-Cheese-Roll-Ups-38.jpg"
+    }]
   }
 },
 {
@@ -478,13 +489,42 @@ const restaurants = [
   cuisines: ["Chinese"],
   avgRating: 4.1,
   deliveryTime: 31,
+  location:"SuryaNagar",
   offer: "₹80 off",
   price: "₹820",
-  image: "https://picsum.photos/200/150?random=14",
+  image: "https://plus.unsplash.com/premium_photo-1673769108491-e87f4a72eec7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNoaW5lc2UlMjBkaXNofGVufDB8fDB8fHww",
   menu: {
-    Recommended: [{ name: "Veg Fried Rice", price: "₹220", avgRating: 4.2 }],
-    Drinks: [{ name: "Ice Tea", price: "₹120", avgRating: 4.1 }],
-    "Our Special": [{ name: "Schezwan Combo", price: "₹340", avgRating: 4.4 }]
+    Recommended: [{ name: "Veg Fried Rice", price: "₹220", avgRating: 4.2,
+      image:"https://images.unsplash.com/photo-1664717698774-84f62382613b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVnJTIwZnJpZWQlMjByaWNlfGVufDB8fDB8fHww"
+    },
+    { name: "MoMo", price: "₹120", avgRating: 4.1,
+      image:"https://plus.unsplash.com/premium_photo-1661600630493-a1dad6b9519b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bW9tb3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    { name: "ChilliPotato", price: "₹120", avgRating: 4.1,
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQquOO16xx4GWxWpbfOj-PV3EEX4OeoGn7reQ&s"
+    },
+    { name: "SingapuriChowmein", price: "₹420", avgRating: 4.0,
+      image:"https://media.istockphoto.com/id/2157421455/photo/chicken-chow-mein-with-tomato-ketchup-and-chilli-flakes-high-angle-photo.webp?a=1&b=1&s=612x612&w=0&k=20&c=2SOgrl7IhfVo8rxCE3Tcwo3sI8A6AOJnq4I0g69NWqM="
+    },
+    { name: "SpringRoll", price: "₹220", avgRating: 4.2,
+      image:"https://images.unsplash.com/photo-1679310290259-78d9eaa32700?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5nJTIwcm9sbHxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    { name: "Dumplings", price: "₹120", avgRating: 4.1,
+      image:"https://plus.unsplash.com/premium_photo-1674601032998-d9982816d2d6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fGR1bXBsaW5nc3xlbnwwfHwwfHx8MA%3D%3D"
+    }
+    ],
+    Drinks: [{ name: "Ice Tea", price: "₹120", avgRating: 4.1,
+      image:"https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aWNlJTIwdGVhfGVufDB8fDB8fHww"
+    },
+  { name: "Lemon Tea", price: "₹220", avgRating: 4.2,
+      image:"https://images.unsplash.com/photo-1623157980612-da2c2cdb4c0b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGljZSUyMHRlYXxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    { name: "Mojito Tea", price: "₹120", avgRating: 4.1,
+      image:"https://plus.unsplash.com/premium_photo-1722194069219-16ec49c08625?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9qaXRvfGVufDB8fDB8fHww"
+    }],
+    "Our Special": [{ name: "Schezwan Combo", price: "₹340", avgRating: 4.4,
+      image:"https://media.istockphoto.com/id/1392520791/photo/chicken-hakka-schezwan-noodles.webp?a=1&b=1&s=612x612&w=0&k=20&c=h19RNUyumP61rtxmGi5LGhj4qjXzL_FFae7-ZlGmM3Q="
+    }]
   }
 },
 {
@@ -494,12 +534,30 @@ const restaurants = [
   avgRating: 4.6,
   deliveryTime: 19,
   offer: "Free Juice",
+  location:"DilshadCalony:",
   price: "₹640",
-  image: "https://picsum.photos/200/150?random=15",
+  image: "https://images.unsplash.com/photo-1666819691822-29a09f0992e5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGhlYWx0aHklMjBib3dsfGVufDB8fDB8fHww",
   menu: {
-    Recommended: [{ name: "Quinoa Salad", price: "₹260", avgRating: 4.6 }],
-    Drinks: [{ name: "Detox Juice", price: "₹160", avgRating: 4.5 }],
-    "Our Special": [{ name: "Protein Power Bowl", price: "₹360", avgRating: 4.7 }]
+    Recommended: [{ name: "Quinoa Salad", price: "₹560", avgRating: 4.1,
+      image:"https://images.unsplash.com/photo-1728691192410-ae2ece584c7d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fHF1aW5vJTIwaGVhbHRoeSUyMGJvd2x8ZW58MHx8MHx8fDA%3D"
+    },
+    { name: "Avacado Salad", price: "₹260", avgRating: 4.6,
+      image:"https://plus.unsplash.com/premium_photo-1664648005775-5f32b1f0f4a5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHF1aW5vJTIwaGVhbHRoeSUyMGJvd2x8ZW58MHx8MHx8fDA%3D"
+    },
+    { name: "Salad", price: "₹460", avgRating: 4.1,
+      image:"https://images.unsplash.com/photo-1676976198166-0d806df0d0ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fHF1aW5vJTIwaGVhbHRoeSUyMGJvd2x8ZW58MHx8MHx8fDA%3D"
+    }
+    ],
+    Drinks: [{ name: "Detox Juice", price: "₹260", avgRating: 4.51,
+      image:"https://images.unsplash.com/flagged/photo-1557753478-b9fb74f39eb5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGV0b3glMjBqdWljZXxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    { name: " Juice", price: "₹160", avgRating: 4.5,
+      image:"https://images.unsplash.com/photo-1628961915002-cd58e3cd8d34?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGRldG94JTIwanVpY2V8ZW58MHx8MHx8fDA%3D"
+    }
+    ],
+    "Our Special": [{ name: "Protein Power Bowl", price: "₹360", avgRating: 4.7,
+      image:"https://images.unsplash.com/photo-1676976198095-61a3bbb061a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fHF1aW5vJTIwaGVhbHRoeSUyMGJvd2x8ZW58MHx8MHx8fDA%3D"
+    }]
   }
 },
 {
@@ -509,12 +567,33 @@ const restaurants = [
   avgRating: 4.8,
   deliveryTime: 18,
   offer: "Buy 1 Get 1",
+  location:"KrishnaNagar",
   price: "₹520",
-  image: "https://picsum.photos/200/150?random=16",
+  image: "https://images.unsplash.com/photo-1551106652-a5bcf4b29ab6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3dlZXR8ZW58MHx8MHx8fDA%3D",
   menu: {
-    Recommended: [{ name: "Chocolate Pastry", price: "₹140", avgRating: 4.7 }],
-    Drinks: [{ name: "Hot Chocolate", price: "₹160", avgRating: 4.8 }],
-    "Our Special": [{ name: "Belgian Waffle", price: "₹260", avgRating: 4.9 }]
+    Recommended: [{ name: "Chocolate Pastry", price: "₹140", avgRating: 4.7 ,
+      image:"https://images.unsplash.com/photo-1624802674607-93bedb6cb1aa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNob2NsYXRlJTIwcGFzdHJ5fGVufDB8fDB8fHww"
+    },
+  { name: "Pie", price: "340", avgRating: 4.2 ,
+      image:"https://images.unsplash.com/photo-1476887334197-56adbf254e1a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBhc3RyeXxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    { name: "Choclate Cake", price: "₹540", avgRating: 4.1 ,
+      image:"https://images.unsplash.com/photo-1572897306051-abf270479682?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fHBhc3RyeXxlbnwwfHwwfHx8MA%3D%3D"
+    }
+  ],
+    Drinks: [{ name: "Hot Chocolate", price: "₹160", avgRating: 4.8,
+      image:"https://plus.unsplash.com/premium_photo-1671660015348-0bfcc2e0b8cf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG90JTIwY2hvY2xhdGV8ZW58MHx8MHx8fDA%3D"
+    },
+  { name: "Fruit Bear", price: "₹260", avgRating: 4.8,
+      image:"https://images.unsplash.com/photo-1668243108953-09caa01b291b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZnJ1aXQlMjBiZWVyfGVufDB8fDB8fHww"
+    },
+  { name: "Mojito", price: "₹240", avgRating: 4.8,
+      image:"https://images.unsplash.com/photo-1631155989677-86c683e27ad5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZydWl0JTIwYmVlcnxlbnwwfHwwfHx8MA%3D%3D"
+    }
+  ],
+    "Our Special": [{ name: "Belgian Waffle", price: "₹260", avgRating: 4.9,
+      image:"https://images.unsplash.com/photo-1558584724-0e4d32ca55a4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVsZ2lhbiUyMHdhZmZsZXxlbnwwfHwwfHx8MA%3D%3D"
+    }]
   }
 },
 {
@@ -524,12 +603,30 @@ const restaurants = [
   avgRating: 4.5,
   deliveryTime: 38,
   offer: "20% off",
+  location:"VishwaVidhayalaya",
   price: "₹1100",
-  image: "https://picsum.photos/200/150?random=17",
+  image: "https://plus.unsplash.com/premium_photo-1707935175109-ba307d98bfe2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2VhZm9vZHxlbnwwfHwwfHx8MA%3D%3D",
   menu: {
-    Recommended: [{ name: "Fish Fry", price: "₹420", avgRating: 4.6 }],
-    Drinks: [{ name: "Lime Water", price: "₹120", avgRating: 4.3 }],
-    "Our Special": [{ name: "Grilled Prawns", price: "₹620", avgRating: 4.7 }]
+    Recommended: [{ name: "Fish Fry", price: "₹420", avgRating: 4.6,
+      image:"https://plus.unsplash.com/premium_photo-1683657860084-5f9723dcac0b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmlzaCUyMGZyeXxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    { name: "Fish Nuggets", price: "₹320", avgRating: 4.3,
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHU_uCDY4EFfa3PX4j3HUI_0_szBLMjUJOuMcVUUz2hOKP263YZ-5GuTz7goFYRjF_DTJndhatP3AjxvTNoRELhb9LcYKadkHRJAsm8YSK&s=10"
+    },
+    { name: "Prawns Fish", price: "₹520", avgRating: 4.1,
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu6GDI2W-muwjSlsetSXZmvFvDFINWmWsQZyMRHN06-FD2FZi3f3SBJzc&s"
+    }
+    ],
+    Drinks: [{ name: "Lime Water", price: "₹100", avgRating: 4.1,
+      image:"https://media.istockphoto.com/id/994492332/photo/fresh-gin-tonic.webp?a=1&b=1&s=612x612&w=0&k=20&c=zFBKlfJ2KMFIERlXluz1ZQQEyOtKve5ygcInggFwSAQ="
+    },
+    { name: "Orange Juice", price: "₹120", avgRating: 4.3,
+      image:"https://images.unsplash.com/photo-1761315413219-c6cb16145feb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGxpbWUlMjBkcmlua3xlbnwwfHwwfHx8MA%3D%3D"
+    }
+    ],
+    "Our Special": [{ name: "Grilled Prawns", price: "₹620", avgRating: 4.7,
+      image:"https://media.istockphoto.com/id/185289396/photo/grilled-shrimp.webp?a=1&b=1&s=612x612&w=0&k=20&c=35ElMt-zNW-ZY7LXDt8Ij_PLmB6yWnwRi5X27ZbE5FY="
+    }]
   }
 },
 {
@@ -538,13 +635,31 @@ const restaurants = [
   cuisines: ["Breakfast"],
   avgRating: 4.4,
   deliveryTime: 20,
+  location:"DurgaPuri",
   offer: "Morning Special",
   price: "₹500",
-  image: "https://picsum.photos/200/150?random=18",
+  image: "https://media.istockphoto.com/id/1495261625/photo/homemade-indian-vegetarian-food-allo-paratha-served-with-potato-curry-and-bowl-of-curd.webp?a=1&b=1&s=612x612&w=0&k=20&c=RGjOoTQNklQRqjMV4qmP8_pilA0OA1Os3i7B1q_rTSI=",
   menu: {
-    Recommended: [{ name: "Aloo Paratha", price: "₹160", avgRating: 4.5 }],
-    Drinks: [{ name: "Tea", price: "₹60", avgRating: 4.4 }],
-    "Our Special": [{ name: "Breakfast Combo", price: "₹260", avgRating: 4.6 }]
+    Recommended: [{ name: "Aloo Paratha", price: "₹160", avgRating: 4.2,
+      image:"https://media.istockphoto.com/id/1341533202/photo/closeup-shot-of-the-allo-paratha-in-a-plate.webp?a=1&b=1&s=612x612&w=0&k=20&c=aGesr0DI2ZY7SDlkMuxF5jmwTg3SBke2uY9C243N6Vs="
+    },
+    { name: "Mix Paratha", price: "₹260", avgRating: 4.5,
+      image:"https://media.istockphoto.com/id/1341533202/photo/closeup-shot-of-the-allo-paratha-in-a-plate.webp?a=1&b=1&s=612x612&w=0&k=20&c=aGesr0DI2ZY7SDlkMuxF5jmwTg3SBke2uY9C243N6Vs="
+    },
+    { name: "Parath aWith Butter", price: "₹360", avgRating: 4.0,
+      image:"https://media.istockphoto.com/id/682482514/photo/daikon-radish-mooli-or-muli-paratha-or-stuffed-radish-paratha-indian-or-pakistani-favourite.webp?a=1&b=1&s=612x612&w=0&k=20&c=wd7Hm_o4B5gzWuE4590E0s-HGfuXeZxrbt73M2PSrPg="
+    }
+    ],
+    Drinks: [{ name: "Tea", price: "₹60", avgRating: 4.4,
+      image:"https://media.istockphoto.com/id/2155726522/photo/teapot-on-handmade-kulhad-cups-at-tea-stall.webp?a=1&b=1&s=612x612&w=0&k=20&c=8e9PESn0YfLGDnxJNPUjKR2dn-g_71_IAtVZerTBsTs="
+    },
+    { name: "Coffe", price: "₹60", avgRating: 4.4,
+      image:"https://plus.unsplash.com/premium_photo-1673545518947-ddf3240090b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNvZmZlfGVufDB8fDB8fHww"
+    }
+  ],
+    "Our Special": [{ name: "Breakfast Combo", price: "₹260", avgRating: 4.6,
+      image:"https://media.istockphoto.com/id/2241747146/photo/north-indian-thali-meal-combo.webp?a=1&b=1&s=612x612&w=0&k=20&c=onxj9k3cgJHH2bMB5MZj7OJX4tEf_K8KNtEMmj0wHC4="
+    }]
   }
 },
 {
@@ -554,12 +669,23 @@ const restaurants = [
   avgRating: 4.5,
   deliveryTime: 33,
   offer: "15% off",
+  location:"AzadPur",
   price: "₹1300",
-  image: "https://picsum.photos/200/150?random=19",
+  image: "https://images.unsplash.com/photo-1506280754576-f6fa8a873550?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aXRhbGlhbiUyMGZvb2R8ZW58MHx8MHx8fDA%3D",
   menu: {
-    Recommended: [{ name: "Penne Alfredo", price: "₹420", avgRating: 4.5 }],
-    Drinks: [{ name: "Iced Tea", price: "₹160", avgRating: 4.4 }],
-    "Our Special": [{ name: "Wood Fired Pizza", price: "₹620", avgRating: 4.7 }]
+    Recommended: [{ name: "Penne Alfredo", price: "₹420", avgRating: 4.5,
+      image:"https://images.unsplash.com/photo-1662197480393-2a82030b7b83?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVubmUlMjBwYXN0YXxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    { name: "Spegati Pasta", price: "₹540", avgRating: 4.1,
+      image:"https://images.unsplash.com/photo-1516100882582-96c3a05fe590?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBhc3RhfGVufDB8fDB8fHww"
+    }
+    ],
+    Drinks: [{ name: "Iced Tea", price: "₹160", avgRating: 4.4,
+      image:"https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aWNlJTIwdGVhfGVufDB8fDB8fHww"
+    }],
+    "Our Special": [{ name: "Wood Fired Pizza", price: "₹620", avgRating: 4.7,
+      image:"https://images.unsplash.com/photo-1622880833523-7cf1c0bd4296?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29vZCUyMGZpcmVkJTIwcGl6emF8ZW58MHx8MHx8fDA%3D"
+    }]
   }
 },
 {
@@ -568,13 +694,31 @@ const restaurants = [
   cuisines: ["Street Food"],
   avgRating: 4.3,
   deliveryTime: 17,
+  location:"Jhilmil",
   offer: "₹50 off",
   price: "₹480",
-  image: "https://picsum.photos/200/150?random=20",
+  image: "https://images.unsplash.com/photo-1619193099598-6856ec4e2a87?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGF2JTIwYmhhaml8ZW58MHx8MHx8fDA%3D",
   menu: {
-    Recommended: [{ name: "Pav Bhaji", price: "₹180", avgRating: 4.4 }],
-    Drinks: [{ name: "Masala Soda", price: "₹80", avgRating: 4.2 }],
-    "Our Special": [{ name: "Street Food Combo", price: "₹260", avgRating: 4.5 }]
+    Recommended: [{ name: "Pav Bhaji", price: "₹180", avgRating: 4.4,
+      image:"https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGF2JTIwYmhhaml8ZW58MHx8MHx8fDA%3D"
+    },
+  { name: "Tikki", price: "₹180", avgRating: 4.4,
+      image:"https://media.istockphoto.com/id/2242467736/photo/aloo-tikki-chaat.webp?a=1&b=1&s=612x612&w=0&k=20&c=RoEhBm5FEwqQhQX9oRPFtxMFg1tM1y12-2MIAIV-gQw="
+    },
+    { name: "Samosa Chat", price: "₹180", avgRating: 4.4,
+      image:"https://media.istockphoto.com/id/2225831062/photo/samosa-chat.webp?a=1&b=1&s=612x612&w=0&k=20&c=tp04NBkqEPe8qsjA_TVLM-tWJYC8qN3Aj5vbaJdXjYk="
+    }
+  ],
+    Drinks: [{ name: "Masala Soda", price: "₹80", avgRating: 4.2,
+      image:"https://plus.unsplash.com/premium_photo-1724711441081-5c4199721ad7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWFzYWxhJTIwc29kQSU1Q3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    { name: "Masala Tea", price: "₹80", avgRating: 4.2,
+      image:"https://images.unsplash.com/photo-1618183507099-4fa269f9b0ee?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1hc2FsYSUyMHNvZEElNUN8ZW58MHx8MHx8fDA%3D"
+    }
+    ],
+    "Our Special": [{ name: "Street Food Combo", price: "₹260", avgRating: 4.5,
+      image:"https://media.istockphoto.com/id/2253124484/photo/korean-street-food-variety-set-with-tteokbokki-chicken-and-rice-balls.webp?a=1&b=1&s=612x612&w=0&k=20&c=bhptntIrEmI7ac74avP4LSBAX9Z6fu_XjAYwCjMaHz4="
+    }]
   }
 },
 {
@@ -584,12 +728,21 @@ const restaurants = [
   avgRating: 4.6,
   deliveryTime: 36,
   offer: "20% off",
+  location:"Sangam Vihar",
+  location:"Jyoti Calony",
   price: "₹1400",
-  image: "https://picsum.photos/200/150?random=21",
+  image: "https://plus.unsplash.com/premium_photo-1731512475641-191f7841512e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   menu: {
-    Recommended: [{ name: "Chicken Shawarma", price: "₹320", avgRating: 4.6 }],
-    Drinks: [{ name: "Mint Lemonade", price: "₹160", avgRating: 4.5 }],
-    "Our Special": [{ name: "Arabian Platter", price: "₹560", avgRating: 4.8 }]
+    Recommended: [{ name: "Chicken Shawarma", price: "₹320", avgRating: 4.6,
+      image:"https://media.istockphoto.com/id/1296474515/photo/popular-arabic-turkish-fastfood-doner-shawarma-roll-with-meat-and-vegetables.webp?a=1&b=1&s=612x612&w=0&k=20&c=OXT4LXKsVExGd1EtRYf0xlqvj6iMAo80fWokfMDKQFs="
+    }],
+    Drinks: [{ name: "Mint Lemonade", price: "₹160", avgRating: 4.5,
+      image:"https://media.istockphoto.com/id/500202440/photo/freshly-made-lemonade-with-a-hint-of-mint.webp?a=1&b=1&s=612x612&w=0&k=20&c=RF5MJLvMtQLyiGEAyvcXyvCqZPV06l0yojGlyPcz_5Y="
+
+    }],
+    "Our Special": [{ name: "Arabian Platter", price: "₹560", avgRating: 4.8,
+      image:"https://media.istockphoto.com/id/1383719372/photo/west-indies.webp?a=1&b=1&s=612x612&w=0&k=20&c=XFsze5ZFczOaTKWhYayJs414gRRk_jH7PX6q-9MPLEs="
+    }]
   }
 },
 {
@@ -599,12 +752,19 @@ const restaurants = [
   avgRating: 4.2,
   deliveryTime: 27,
   offer: "Free Dessert",
+  location:"Noida",
   price: "₹760",
-  image: "https://picsum.photos/200/150?random=22",
+  image: "https://media.istockphoto.com/id/1346532590/photo/isolated-hawaiian-sous-vid-beef-poke-bowl.webp?a=1&b=1&s=612x612&w=0&k=20&c=J9SmyhfFIR0bniAuP8Qxx2PghiScUxRiFXKGHaNcuvA=",
   menu: {
-    Recommended: [{ name: "Fusion Pasta", price: "₹340", avgRating: 4.3 }],
-    Drinks: [{ name: "Fruit Punch", price: "₹140", avgRating: 4.2 }],
-    "Our Special": [{ name: "Chef Special Bowl", price: "₹420", avgRating: 4.5 }]
+    Recommended: [{ name: "Fusion Pasta", price: "₹340", avgRating: 4.3,
+        image:"https://media.istockphoto.com/id/1469964869/photo/traditional-asian-fried-noodles-with-chicken-and-vegetables-on-dark-background-udon-noodles.webp?a=1&b=1&s=612x612&w=0&k=20&c=G47QKz6e4-tnJHBegZ0UfheKc2sGQ-nUciP_eHfLHgs="
+    }],
+    Drinks: [{ name: "Fruit Punch", price: "₹140", avgRating: 4.2,
+      image:"https://images.unsplash.com/photo-1613515766737-2bca4972f4e4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJ1aXQlMjBwdW5jaHxlbnwwfHwwfHx8MA%3D%3D"
+    }],
+    "Our Special": [{ name: "Chef Special Bowl", price: "₹420", avgRating: 4.5,
+      image:"https://media.istockphoto.com/id/1966355073/photo/vietnamese-food.webp?a=1&b=1&s=612x612&w=0&k=20&c=t0xFp53FXOmTYCMBfw8qUF_YvbLtmhivWNs7s7thZV4="
+    }]
   }
 },
 {
@@ -614,12 +774,19 @@ const restaurants = [
   avgRating: 4.7,
   deliveryTime: 39,
   offer: "25% off",
+  location:"Jheel",
   price: "₹1500",
-  image: "https://picsum.photos/200/150?random=23",
+  image: "https://media.istockphoto.com/id/2211941187/photo/isolated-grilled-meat-skewers-on-hot-charcoal-grill.webp?a=1&b=1&s=612x612&w=0&k=20&c=-HyKuWEur_aVYS9FCBc0XsOHi9MW1sK1j1kGruEjAq0=",
   menu: {
-    Recommended: [{ name: "BBQ Chicken Wings", price: "₹480", avgRating: 4.7 }],
-    Drinks: [{ name: "Cold Beer", price: "₹220", avgRating: 4.6 }],
-    "Our Special": [{ name: "BBQ Feast Platter", price: "₹720", avgRating: 4.8 }]
+    Recommended: [{ name: "BBQ Chicken Wings", price: "₹480", avgRating: 4.7,
+      Image:"https://media.istockphoto.com/id/2015373043/photo/grilled-chicken-wings.webp?a=1&b=1&s=612x612&w=0&k=20&c=G0XKtrhJohQOu6usa2uE85MK9-NYUUehkyDSpOG6Cn8="
+     }],
+    Drinks: [{ name: "Cold Beer", price: "₹220", avgRating: 4.6,
+      image:"https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sZCUyMGJlZXJ8ZW58MHx8MHx8fDA%3D"
+     }],
+    "Our Special": [{ name: "BBQ Feast Platter", price: "₹720", avgRating: 4.8,
+      images:"https://images.unsplash.com/photo-1708388065014-abafa002040a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJicSUyMGZlYXN0JTIwcGxhdHRlcnxlbnwwfHwwfHx8MA%3D%3D"
+     }]
   }
 },
 {
@@ -628,15 +795,23 @@ const restaurants = [
   cuisines: ["Fast Food", "Snacks"],
   avgRating: 4.1,
   deliveryTime: 45,
+  location:"Sadar Bajar",
   offer: "Late Night Deal",
   price: "₹680",
-  image: "https://picsum.photos/200/150?random=24",
+  image: "https://media.istockphoto.com/id/1156080609/photo/butter-maggi.webp?a=1&b=1&s=612x612&w=0&k=20&c=zmhP7vA6J6f5S8siZCj_MNnPljNY8mi2Yula0YoTqNQ=",
   menu: {
-    Recommended: [{ name: "Cheese Maggi", price: "₹160", avgRating: 4.2 }],
-    Drinks: [{ name: "Energy Drink", price: "₹180", avgRating: 4.1 }],
-    "Our Special": [{ name: "Midnight Combo", price: "₹320", avgRating: 4.4 }]
+    Recommended: [{ name: "Cheese Maggi", price: "₹160", avgRating: 4.2,
+      image:"https://media.istockphoto.com/id/1309935812/photo/vegetable-maggi-recipe-tasty-veg-maggi-veg-maggi-masala-noodles-easy-quick-veg-noodles.webp?a=1&b=1&s=612x612&w=0&k=20&c=l7mOeocR471uLEESmFUtvifWImR__4n9nnwJEcK4XF8="
+    }],
+    Drinks: [{ name: "Energy Drink", price: "₹180", avgRating: 4.1,
+      image:"https://images.unsplash.com/photo-1677177751361-0416255ff002?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }],
+    "Our Special": [{ name: "Midnight Combo", price: "₹320", avgRating: 4.4 ,
+      image:"https://media.istockphoto.com/id/1214915769/photo/maggie-noodles.webp?a=1&b=1&s=612x612&w=0&k=20&c=Xu6JyR5RDGVBxrSnkJ52XGEwG3vY8F5quvISyZuncTI="
+    }]
   }
-}
+},
+
 
 ];
 
