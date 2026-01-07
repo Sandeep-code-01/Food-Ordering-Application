@@ -18,10 +18,10 @@ const RestaurantCard = ({ resData }) => {
   const offerText = offer || aggregatedDiscountInfoV3?.header || null;
 
   return (
-    <div className="relative m-3 w-full sm:w-[260px] bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+    <div className="relative m-3 w-full sm:w-[260px] bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
 
       {/* Image */}
-      <div className="relative w-full h-40 overflow-hidden rounded-t-xl">
+      <div className="relative w-full h-40 overflow-hidden rounded-xl">
         <img
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
           alt={name}
@@ -29,7 +29,7 @@ const RestaurantCard = ({ resData }) => {
         />
 
         {/* Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent rounded-xl"></div>
 
         {/* Offer */}
         {offerText && (
@@ -45,14 +45,10 @@ const RestaurantCard = ({ resData }) => {
           {name || "Restaurant"}
         </h3>
 
-        {/* Rating & Time */}
         <div className="flex items-center gap-2 mt-1 text-sm font-semibold text-gray-800">
           <span className="flex items-center gap-1">
-
-            {/* ⭐ Avg Rating */}
             <span className="relative inline-flex w-5 h-5">
               <span className="absolute inset-0 bg-green-600 rounded-full"></span>
-
               <svg
                 viewBox="0 0 24 24"
                 className="absolute inset-0 m-auto w-3 h-3 text-white"
@@ -61,19 +57,15 @@ const RestaurantCard = ({ resData }) => {
                 <path d="M12 17.3l-6.18 3.7 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63L22 9.24l-5.46 4.73 1.64 7.03z" />
               </svg>
             </span>
-
             {avgRating || "N/A"}
           </span>
-
           <span>• {deliveryTime || "N/A"} mins</span>
         </div>
 
-        {/* Cuisines */}
         <p className="text-sm text-gray-600 truncate mt-1">
           {Array.isArray(cuisines) ? cuisines.join(", ") : "Various Cuisines"}
         </p>
 
-        {/* Location */}
         {location && (
           <p className="text-sm text-gray-600 truncate mt-1">
             {location}
@@ -87,20 +79,10 @@ const RestaurantCard = ({ resData }) => {
 /* 🔥 Promoted HOC */
 export const withPromotedLabel = (RestaurantCard) => {
   return (props) => (
-    <div className="relative">
-      <span
-        className="
-          absolute top-2 left-2 z-10
-          bg-yellow-400/60
-          text-black
-          text-[10px] font-semibold uppercase
-          px-2 py-0.5
-          rounded-md
-        "
-      >
+    <div className="relative w-full sm:w-[260px]">
+      <span className="absolute top-2 left-2 z-20 bg-yellow-400/60 text-black text-[10px] font-semibold uppercase px-2 py-0.5 rounded-md">
         Promoted
       </span>
-
       <RestaurantCard {...props} />
     </div>
   );
