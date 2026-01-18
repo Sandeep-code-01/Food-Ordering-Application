@@ -18,7 +18,7 @@ const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
-
+// {/*  authentication */}
   useEffect(() => {
     const data = { name: "sandeep kumar" };
     setUserName(data.name);

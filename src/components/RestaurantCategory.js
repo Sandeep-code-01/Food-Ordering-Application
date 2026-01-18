@@ -82,7 +82,7 @@ const RestaurantCategory = ({
                       }
                     >
                       Add +
-                    </button>
+                    </button>``
                   </div>
                 )}
               </div>
