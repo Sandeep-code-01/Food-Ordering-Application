@@ -1,9 +1,9 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    items: [],
+    items: [], // Array of cart items
   },
   reducers: {
     addItem: (state, action) => {

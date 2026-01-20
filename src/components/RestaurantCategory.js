@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice"; 
 
 const RestaurantCategory = ({
   title,
@@ -8,6 +10,11 @@ const RestaurantCategory = ({
   setShowIndex,
 }) => {
   useContext(UserContext); // kept as-is
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+  };
 
   return (
     <div className="my-5 border border-gray-200 rounded-xl bg-white shadow-sm overflow-hidden">
@@ -34,21 +41,22 @@ const RestaurantCategory = ({
                 className="flex justify-between gap-4 border rounded-xl p-4 bg-white hover:shadow-md transition-all"
               >
                 {/* Left Content */}
-                <div className="flex flex-col flex-1">
-                  <h3 className="font-semibold text-gray-700">
-                    {item.name}
-                  </h3>
+                <div className="flex flex-col flex-1 gap-1">
+                  {/* Name */}
+                  <h3 className="font-semibold text-gray-700">{item.name}</h3>
 
-                  <p className="text-sm font-medium text-gray-900 mt-1">
-                    {item.price}
-                  </p>
-
+                  {/* Avg Rating */}
                   {item.avgRating && (
-                    <div className="flex items-center gap-1 text-sm font-semibold text-green-600 mt-1">
+                    <span className="flex items-center gap-1 text-xs font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded w-max">
                       <span>★</span>
                       {item.avgRating}
-                    </div>
+                    </span>
                   )}
+
+                  {/* Price */}
+                  <p className="text-sm font-medium text-gray-900">
+                    {item.price}
+                  </p>
                 </div>
 
                 {/* Image + Add Button */}
@@ -66,23 +74,21 @@ const RestaurantCategory = ({
                       </span>
                     )}
 
-                    {/* Attractive Add Button */}
+                    {/* Add Button */}
                     <button
                       className="absolute -bottom-2 left-1/2 -translate-x-1/2
-                                  flex items-center gap-1
-                                      px-3 py-1.5
-                                          bg-white text-green-600
-                                                  border border-green-300
-                                                          text-sm font-semibold
-                                                          rounded-full
-                                                      shadow-sm
-                                                  hover:bg-green-50
-                                            hover:shadow-md
-                                        hover:scale-105
-                                  transition-all duration-200"
-                      onClick={() =>
-                        console.log("Add item:", item.name)
-                      }
+                                 flex items-center gap-1
+                                 px-3 py-1.5
+                                 bg-white text-green-600
+                                 border border-green-300
+                                 text-sm font-semibold
+                                 rounded-full
+                                 shadow-sm
+                                 hover:bg-green-50
+                                 hover:shadow-md
+                                 hover:scale-105
+                                 transition-all duration-200"
+                      onClick={() => handleAddItem(item)}
                     >
                       Add <span className="text-lg leading-none">+</span>
                     </button>

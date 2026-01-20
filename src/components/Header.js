@@ -46,7 +46,7 @@ const Header = () => {
           <Link className="hover:text-green-600 transition" to="/grocery">Grocery</Link>
 
           <Link className="hover:text-green-600 transition" to="/cart">
-            Cart ({cartItems.length})
+            🛒({cartItems.length})
           </Link>
 
           <button

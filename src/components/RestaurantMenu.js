@@ -46,20 +46,13 @@ const RestaurantMenu = () => {
             <span>{cuisines.join(", ")}</span>
             <span>| {price}</span>
 
-            {/* ⭐ Avg Rating */}
-            <span className="flex items-center gap-1">
-              <span className="relative inline-flex w-5 h-5">
-                <span className="absolute inset-0 bg-green-600 rounded-full"></span>
-                <svg
-                  viewBox="0 0 24 24"
-                  className="absolute inset-0 m-auto w-3 h-3 text-white"
-                  fill="currentColor"
-                >
-                  <path d="M12 17.3l-6.18 3.7 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63L22 9.24l-5.46 4.73 1.64 7.03z" />
-                </svg>
+            {/* ⭐ Avg Rating - GREEN PILL */}
+            {avgRating && (
+              <span className="flex items-center gap-1 text-xs font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded">
+                <span>★</span>
+                {avgRating}
               </span>
-              {avgRating}
-            </span>
+            )}
 
             <span>| ⏱ {deliveryTime} mins</span>
           </div>
