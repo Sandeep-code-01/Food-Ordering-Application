@@ -68,7 +68,7 @@ const restaurants = [
       { name: "Banta", price: "₹100", avgRating: 4.2,
           image:"https://images.unsplash.com/photo-1566846128021-b940b0eec910?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJoYW50YSUyMGJvdHRsZXxlbnwwfHwwfHx8MA%3D%3D"
       },
-      { name: ",Fanta", price: "₹160", avgRating: 4.2,
+      { name: "Fanta", price: "₹160", avgRating: 4.2,
           image:"https://images.unsplash.com/photo-1739990789992-77ef676cb709?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmFudGF8ZW58MHx8MHx8fDA%3D"
       }
     ],
