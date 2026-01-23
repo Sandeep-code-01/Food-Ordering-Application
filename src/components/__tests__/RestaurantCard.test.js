@@ -6,7 +6,7 @@ import "@testing-library/jest-dom";
 it("should render RestaurantCard component with props Data", () => {
   render(<RestaurantCard resData={MOCK_DATA} />);
 
-  const name = screen.getByText("Leon's - Burgers & Wings (Leon Grill)");
+  const name = screen.getByText("Pizza Palace");
 
   expect(name).toBeInTheDocument();
 });

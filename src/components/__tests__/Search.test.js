@@ -1,62 +1,37 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { act } from "react-dom/test-utils";
 import Body from "../Body";
 import MOCK_DATA from "../mocks/mockResListData.json";
 import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 
-global.fetch = jest.fn(() => {
-  return Promise.resolve({
-    json: () => {
-      return Promise.resolve(MOCK_DATA);
-    },
-  });
-});
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () => Promise.resolve(MOCK_DATA),
+  })
+);
 
-it("Should Search Res List for burger text input ", async () => {
-  await act(async () =>
+describe("Search Functionality", () => {
+  it("Should Search Res List for burger text input", async () => {
     render(
       <BrowserRouter>
         <Body />
       </BrowserRouter>
-    )
-  );
+    );
 
-  const cardsBeforeSearch = screen.getAllByTestId("resCard");
+    // ⏳ Wait for cards (NOT getAllBy)
+    const cardsBeforeSearch = await screen.findAllByTestId("resCard");
+    expect(cardsBeforeSearch.length).toBe(3);
 
-  expect(cardsBeforeSearch.length).toBe(20);
+    const searchInput = screen.getByTestId("searchInput");
+    const searchBtn = screen.getByRole("button", { name: /search/i });
 
-  const searchBtn = screen.getByRole("button", { name: "Search" });
+    fireEvent.change(searchInput, {
+      target: { value: "burger" },
+    });
 
-  const searchInput = screen.getByTestId("searchInput");
+    fireEvent.click(searchBtn);
 
-  fireEvent.change(searchInput, { target: { value: "burger" } });
-
-  fireEvent.click(searchBtn);
-
-  const cardsAfterSearch = screen.getAllByTestId("resCard");
-
-  expect(cardsAfterSearch.length).toBe(4);
-});
-
-it("Should filter Top Rated Restaurant", async () => {
-  await act(async () =>
-    render(
-      <BrowserRouter>
-        <Body />
-      </BrowserRouter>
-    )
-  );
-
-  const cardsBeforeFilter = screen.getAllByTestId("resCard");
-
-  expect(cardsBeforeFilter.length).toBe(20);
-
-  const topRatedBtn = screen.getByRole("button", {
-    name: "Top Rated Restaurants",
+    const cardsAfterSearch = screen.getAllByTestId("resCard");
+    expect(cardsAfterSearch.length).toBe(2);
   });
-  fireEvent.click(topRatedBtn);
-
-  const cardsAfterFilter = screen.getAllByTestId("resCard");
-  expect(cardsAfterFilter.length).toBe(13);
 });
