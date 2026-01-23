@@ -779,13 +779,13 @@ const restaurants = [
   image: "https://media.istockphoto.com/id/2211941187/photo/isolated-grilled-meat-skewers-on-hot-charcoal-grill.webp?a=1&b=1&s=612x612&w=0&k=20&c=-HyKuWEur_aVYS9FCBc0XsOHi9MW1sK1j1kGruEjAq0=",
   menu: {
     Recommended: [{ name: "BBQ Chicken Wings", price: "₹480", avgRating: 4.7,
-      Image:"https://media.istockphoto.com/id/2015373043/photo/grilled-chicken-wings.webp?a=1&b=1&s=612x612&w=0&k=20&c=G0XKtrhJohQOu6usa2uE85MK9-NYUUehkyDSpOG6Cn8="
+      image:"https://media.istockphoto.com/id/2015373043/photo/grilled-chicken-wings.webp?a=1&b=1&s=612x612&w=0&k=20&c=G0XKtrhJohQOu6usa2uE85MK9-NYUUehkyDSpOG6Cn8="
      }],
     Drinks: [{ name: "Cold Beer", price: "₹220", avgRating: 4.6,
       image:"https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sZCUyMGJlZXJ8ZW58MHx8MHx8fDA%3D"
      }],
     "Our Special": [{ name: "BBQ Feast Platter", price: "₹720", avgRating: 4.8,
-      images:"https://images.unsplash.com/photo-1708388065014-abafa002040a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJicSUyMGZlYXN0JTIwcGxhdHRlcnxlbnwwfHwwfHx8MA%3D%3D"
+      image:"https://images.unsplash.com/photo-1708388065014-abafa002040a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJicSUyMGZlYXN0JTIwcGxhdHRlcnxlbnwwfHwwfHx8MA%3D%3D"
      }]
   }
 },
