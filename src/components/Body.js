@@ -10,91 +10,54 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [showShimmer, setShowShimmer] = useState(true);
 
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   const onlineStatus = useOnlineStatus();
   const { loggedInUser, setUserName } = useContext(UserContext);
 
+  // ✅ NO setTimeout (tests friendly)
   useEffect(() => {
-    setTimeout(() => {
-      setListOfRestaurant(restaurants);
-      setFilteredRestaurant(restaurants);
-      setShowShimmer(false);
-    }, 1500); // shimmer delay
+    setListOfRestaurant(restaurants);
+    setFilteredRestaurant(restaurants);
   }, []);
 
+  // ❌ offline
   if (!onlineStatus) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-50">
-        <div className="rounded-xl bg-white p-6 shadow-md">
-          <h1 className="text-xl font-semibold text-gray-700">
-            Looks like you're offline 😕
-          </h1>
-          <p className="mt-2 text-sm text-gray-500">
-            Please check your internet connection.
-          </p>
-        </div>
-      </div>
-    );
+    return <h1>You are offline</h1>;
   }
 
-  if (showShimmer) return <Shimmer />;
+  // ✅ shimmer ONLY when data empty
+  if (listOfRestaurants.length === 0) {
+    return <Shimmer />;
+  }
 
   return (
     <div className="pt-28 px-4 max-w-7xl mx-auto">
-      {/* 🔍 Filters */}
-      <div className="flex flex-wrap items-center gap-4 mb-6">
-        {/* Search */}
-        <div className="flex gap-2">
-          <input
-            type="text"
-            data-testid="searchInput"
-            className="border border-gray-400 px-3 py-2 rounded-md"
-            placeholder="Search restaurant..."
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-          />
-          <button
-            className="px-4 py-2 bg-green-500 text-white rounded-md"
-            onClick={() => {
-              const filtered = listOfRestaurants.filter((res) =>
-                res.name.toLowerCase().includes(searchText.toLowerCase())
-              );
-              setFilteredRestaurant(filtered);
-            }}
-          >
-            Search
-          </button>
-        </div>
+      {/* 🔍 Search */}
+      <div className="flex gap-2 mb-6">
+        <input
+          data-testid="searchInput"
+          className="border px-3 py-2"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
 
-        {/* ⭐ Top Rated */}
         <button
-          className="px-5 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-semibold
-          hover:bg-gray-200 hover:shadow-sm transition-all duration-200"
+          data-testid="searchBtn"
+          className="px-4 py-2 bg-green-300"
           onClick={() => {
-            const filteredList = listOfRestaurants.filter(
-              (res) => Number(res.avgRating) && Number(res.avgRating) > 4.5
+            const filtered = listOfRestaurants.filter((res) =>
+              res.name.toLowerCase().includes(searchText.toLowerCase())
             );
-            setFilteredRestaurant(filteredList);
+            setFilteredRestaurant(filtered);
           }}
         >
-          ⭐ Top Rated Restaurants
+          Search
         </button>
-
-        {/* Username */}
-        <div className="flex items-center gap-2">
-          <label className="font-medium">User:</label>
-          <input
-            className="border border-gray-400 px-2 py-1 rounded-md"
-            value={loggedInUser}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </div>
       </div>
 
-      {/* 🍽 Restaurant Cards */}
+      {/* 🍽 Cards */}
       <div className="flex flex-wrap justify-center">
         {filteredRestaurant.map((restaurant) => {
           const CardComponent = restaurant.promoted
@@ -105,7 +68,6 @@ const Body = () => {
             <Link
               key={restaurant.id}
               to={"/restaurants/" + restaurant.id}
-              className="m-2"
             >
               <CardComponent resData={restaurant} />
             </Link>

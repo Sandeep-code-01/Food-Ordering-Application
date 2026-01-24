@@ -1,29 +1,20 @@
 {
-  "data": {
-    "cards": [
-      {},
-      {},
-      {
-        "card": {
-          "card": {
-            "gridElements": {
-              "infoWithStyle": {
-                "restaurants": [
-                  {
-                    "info": { "id": "1", "name": "Burger King", "avgRating": 4.5 }
-                  },
-                  {
-                    "info": { "id": "2", "name": "Burger Singh", "avgRating": 4.3 }
-                  },
-                  {
-                    "info": { "id": "3", "name": "Pizza Hut", "avgRating": 4.1 }
-                  }
-                ]
-              }
-            }
-          }
-        }
-      }
-    ]
-  }
+  "restaurants": [
+    {
+      "id": "1",
+      "name": "Burger King",
+      "avgRating": "4.2",
+      "cuisines": ["Burger", "Fast Food"],
+      "deliveryTime": 30,
+      "image": "test.jpg"
+    },
+    {
+      "id": "2",
+      "name": "KFC",
+      "avgRating": "4.1",
+      "cuisines": ["Chicken"],
+      "deliveryTime": 28,
+      "image": "test.jpg"
+    }
+  ]
 }

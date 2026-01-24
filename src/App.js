@@ -6,7 +6,7 @@ import './index.css'; // Tailwind import
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet, setReactRouterFutureFlags } from "react-router-dom";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
@@ -16,9 +16,15 @@ import Cart from "./components/Cart";
 const Grocery = lazy(() => import("./components/Grocery"));
 const About = lazy(() => import("./components/About"));
 
+// ✅ Opt-in to React Router v7 future flags to silence warnings
+setReactRouterFutureFlags({
+  v7_startTransition: true,
+  v7_relativeSplatPath: true
+});
+
 const AppLayout = () => {
   const [userName, setUserName] = useState();
-// {/*  authentication */}
+
   useEffect(() => {
     const data = { name: "sandeep kumar" };
     setUserName(data.name);

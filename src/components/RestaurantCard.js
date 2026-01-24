@@ -18,8 +18,10 @@ const RestaurantCard = ({ resData }) => {
   const offerText = offer || aggregatedDiscountInfoV3?.header || null;
 
   return (
-    <div className="relative m-3 w-full sm:w-[260px] bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
-
+    <div
+      data-testid="resCard"   // ✅ REQUIRED FOR TESTS
+      className="relative m-3 w-full sm:w-[260px] bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
+    >
       {/* Image */}
       <div className="relative w-full h-40 overflow-hidden rounded-xl">
         <img
@@ -77,13 +79,13 @@ const RestaurantCard = ({ resData }) => {
 };
 
 /* 🔥 Promoted HOC */
-export const withPromotedLabel = (RestaurantCard) => {
+export const withPromotedLabel = (WrappedRestaurantCard) => {
   return (props) => (
     <div className="relative w-full sm:w-[260px]">
       <span className="absolute top-2 left-2 z-20 bg-yellow-400/60 text-black text-[10px] font-semibold uppercase px-2 py-0.5 rounded-md">
         Promoted
       </span>
-      <RestaurantCard {...props} />
+      <WrappedRestaurantCard {...props} />
     </div>
   );
 };

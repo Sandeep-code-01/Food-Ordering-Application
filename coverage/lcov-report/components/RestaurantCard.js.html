@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -154,11 +154,13 @@
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,11 +171,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -234,8 +238,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -265,8 +269,10 @@ const RestaurantCard = ({ resData }) =&gt; {
   const offerText = offer || <span class="branch-1 cbranch-no" title="branch not covered" >aggregatedDiscountInfoV3?.header </span>|| <span class="branch-2 cbranch-no" title="branch not covered" >null;</span>
 &nbsp;
   return (
-    &lt;div className="relative m-3 w-full sm:w-[260px] bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300"&gt;
-&nbsp;
+    &lt;div
+      data-testid="resCard"   // ✅ REQUIRED FOR TESTS
+      className="relative m-3 w-full sm:w-[260px] bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
+    &gt;
       {/* Image */}
       &lt;div className="relative w-full h-40 overflow-hidden rounded-xl"&gt;
         &lt;img
@@ -324,13 +330,13 @@ const RestaurantCard = ({ resData }) =&gt; {
 };
 &nbsp;
 /* 🔥 Promoted HOC */
-export const withPromotedLabel = (RestaurantCard) =&gt; {
-  return <span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; (
-<span class="cstat-no" title="statement not covered" >    &lt;div className="relative w-full sm:w-[260px]"&gt;</span>
+export const withPromotedLabel = (WrappedRestaurantCard) =&gt; {
+  return (props) =&gt; (
+    &lt;div className="relative w-full sm:w-[260px]"&gt;
       &lt;span className="absolute top-2 left-2 z-20 bg-yellow-400/60 text-black text-[10px] font-semibold uppercase px-2 py-0.5 rounded-md"&gt;
         Promoted
       &lt;/span&gt;
-      &lt;RestaurantCard {...props} /&gt;
+      &lt;WrappedRestaurantCard {...props} /&gt;
     &lt;/div&gt;
   );
 };
@@ -343,7 +349,7 @@ export default RestaurantCard;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-23T16:20:20.656Z
+                at 2026-01-24T05:24:23.089Z
             </div>
         <script src="../prettify.js"></script>
         <script>
