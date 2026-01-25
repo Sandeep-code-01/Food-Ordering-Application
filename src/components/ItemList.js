@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
-import { CDN_URL } from "../utils/constants";
 
 const ItemList = ({ items = [] }) => {
   const dispatch = useDispatch();
@@ -18,9 +17,9 @@ const ItemList = ({ items = [] }) => {
             : info.defaultPrice
             ? info.defaultPrice / 100
             : 0,
-        // image: item.image,
         description: info.description,
         avgRating: info.avgRating,
+        image: item.image || "",
       })
     );
   };
@@ -32,18 +31,19 @@ const ItemList = ({ items = [] }) => {
         const price =
           typeof info.price === "number" ? info.price : info.price || 0;
 
+        // ✅ Unique key to avoid duplicate key warnings
+        const uniqueKey = `${info.id ?? info.name}-${index}`;
+
         return (
           <div
-            key={info.id ?? `${info.name}-${index}`}
+            key={uniqueKey}
             data-testid="foodItems"
-            className="p-3 m-2 border-b border-gray-200 flex justify-between"
+            className="p-3 m-2 border-b border-gray-200 flex justify-between relative"
           >
-            {/* LEFT SECTION: NAME, RATING, PRICE VERTICALLY STACKED */}
+            {/* LEFT SECTION: Name, Rating, Price, Description */}
             <div className="w-9/12 pr-4 flex flex-col items-start gap-1">
-              {/* Name */}
               <h3 className="font-semibold text-gray-800">{info.name}</h3>
 
-              {/* Star Rating */}
               {info.avgRating && (
                 <span className="flex items-center gap-1 text-xs font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded">
                   <span>★</span>
@@ -51,16 +51,14 @@ const ItemList = ({ items = [] }) => {
                 </span>
               )}
 
-              {/* Price */}
-              <p className="text-sm font-medium">{price}</p>
+              <p className="text-sm font-medium">₹{price}</p>
 
-              {/* Description */}
               {info.description && (
                 <p className="text-xs text-gray-600 mt-1">{info.description}</p>
               )}
             </div>
 
-            {/* RIGHT SECTION: IMAGE + ADD BUTTON */}
+            {/* RIGHT SECTION: Image + ADD button */}
             <div className="w-3/12 relative">
               {item.image && (
                 <img
@@ -70,7 +68,6 @@ const ItemList = ({ items = [] }) => {
                 />
               )}
 
-              {/* ADD BUTTON */}
               <button
                 onClick={() => handleAddItem(item)}
                 className="
