@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/Shimmer.js</title>
+    <title>Code coverage report for utils/GroceryCard.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> Shimmer.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">utils</a> GroceryCard.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
@@ -91,21 +91,19 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -119,34 +117,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const Shimmer = () =&gt; {
-  return (
-    &lt;div className="pt-28 px-4 max-w-7xl mx-auto"&gt;
-      &lt;div className="flex flex-wrap justify-center gap-4"&gt;
-        {Array(24)
-          .fill("")
-          .map((_, index) =&gt; (
-            &lt;div
-              key={index}
-              className="w-64 h-72 rounded-xl bg-gray-200 overflow-hidden relative"
-            &gt;
-              {/* Image shimmer */}
-              &lt;div className="h-40 bg-gray-300 animate-pulse"&gt;&lt;/div&gt;
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useDispatch } from "react-redux";
+import { addItem } from "./cartSlice";
 &nbsp;
-              {/* Content shimmer */}
-              &lt;div className="p-3 space-y-2"&gt;
-                &lt;div className="h-4 w-3/4 bg-gray-300 rounded animate-pulse"&gt;&lt;/div&gt;
-                &lt;div className="h-3 w-1/2 bg-gray-300 rounded animate-pulse"&gt;&lt;/div&gt;
-                &lt;div className="h-3 w-2/3 bg-gray-300 rounded animate-pulse"&gt;&lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          ))}
-      &lt;/div&gt;
+const GroceryCard = ({ item }) =&gt; {
+  const dispatch = useDispatch();
+&nbsp;
+  const handleAddToCart = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    dispatch(addItem(item));</span>
+  };
+&nbsp;
+  return (
+    &lt;div className="border p-4 rounded-lg shadow hover:shadow-lg transition-shadow flex flex-col items-center"&gt;
+      &lt;img
+        src={item.image}
+        alt={item.name}
+        className="w-full h-32 object-cover rounded-md mb-2"
+      /&gt;
+      &lt;h3 className="font-semibold text-center"&gt;{item.name}&lt;/h3&gt;
+      &lt;p className="text-gray-600 text-center mb-2"&gt;₹{item.price}&lt;/p&gt;
+      &lt;button
+        className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
+        onClick={handleAddToCart}
+      &gt;
+        Add to Cart
+      &lt;/button&gt;
     &lt;/div&gt;
   );
 };
 &nbsp;
-export default Shimmer;
+export default GroceryCard;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10% </span>
+                <span class="strong">9.09% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/10</span>
+                <span class='fraction'>1/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/21</span>
+                <span class='fraction'>0/23</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10% </span>
+                <span class="strong">9.09% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/10</span>
+                <span class='fraction'>1/11</span>
             </div>
         
             
@@ -160,11 +160,7 @@
 <a name='L95'></a><a href='#L95'>95</a>
 <a name='L96'></a><a href='#L96'>96</a>
 <a name='L97'></a><a href='#L97'>97</a>
-<a name='L98'></a><a href='#L98'>98</a>
-<a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a>
-<a name='L101'></a><a href='#L101'>101</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L98'></a><a href='#L98'>98</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -197,12 +193,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -265,7 +259,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
-import { CDN_URL } from "../utils/constants";
 &nbsp;
 const ItemList = <span class="fstat-no" title="function not covered" >({</span> items = <span class="branch-0 cbranch-no" title="branch not covered" >[] </span>}) =&gt; {
   const dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
@@ -283,9 +276,9 @@ const ItemList = <span class="fstat-no" title="function not covered" >({</span> 
             : info.defaultPrice
             ? info.defaultPrice / 100
             : 0,
-        // image: item.image,
         description: info.description,
         avgRating: info.avgRating,
+        image: item.image || "",
       })
     );
   };
@@ -297,18 +290,19 @@ const ItemList = <span class="fstat-no" title="function not covered" >({</span> 
         const price =
 <span class="cstat-no" title="statement not covered" >          typeof info.price === "number" ? info.price : info.price || 0;</span>
 &nbsp;
+        // ✅ Unique key to avoid duplicate key warnings
+        const uniqueKey = <span class="cstat-no" title="statement not covered" >`${info.id ?? info.name}-${index}`;</span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >        return (</span>
           &lt;div
-            key={info.id ?? `${info.name}-${index}`}
+            key={uniqueKey}
             data-testid="foodItems"
-            className="p-3 m-2 border-b border-gray-200 flex justify-between"
+            className="p-3 m-2 border-b border-gray-200 flex justify-between relative"
           &gt;
-            {/* LEFT SECTION: NAME, RATING, PRICE VERTICALLY STACKED */}
+            {/* LEFT SECTION: Name, Rating, Price, Description */}
             &lt;div className="w-9/12 pr-4 flex flex-col items-start gap-1"&gt;
-              {/* Name */}
               &lt;h3 className="font-semibold text-gray-800"&gt;{info.name}&lt;/h3&gt;
 &nbsp;
-              {/* Star Rating */}
               {info.avgRating &amp;&amp; (
                 &lt;span className="flex items-center gap-1 text-xs font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded"&gt;
                   &lt;span&gt;★&lt;/span&gt;
@@ -316,16 +310,14 @@ const ItemList = <span class="fstat-no" title="function not covered" >({</span> 
                 &lt;/span&gt;
               )}
 &nbsp;
-              {/* Price */}
-              &lt;p className="text-sm font-medium"&gt;{price}&lt;/p&gt;
+              &lt;p className="text-sm font-medium"&gt;₹{price}&lt;/p&gt;
 &nbsp;
-              {/* Description */}
               {info.description &amp;&amp; (
                 &lt;p className="text-xs text-gray-600 mt-1"&gt;{info.description}&lt;/p&gt;
               )}
             &lt;/div&gt;
 &nbsp;
-            {/* RIGHT SECTION: IMAGE + ADD BUTTON */}
+            {/* RIGHT SECTION: Image + ADD button */}
             &lt;div className="w-3/12 relative"&gt;
               {item.image &amp;&amp; (
                 &lt;img
@@ -335,7 +327,6 @@ const ItemList = <span class="fstat-no" title="function not covered" >({</span> 
                 /&gt;
               )}
 &nbsp;
-              {/* ADD BUTTON */}
               &lt;button
                 onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >handleAddItem(item)}</span>
                 className="
@@ -370,7 +361,7 @@ export default ItemList;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-25T06:04:09.589Z
+                at 2026-01-25T06:50:12.105Z
             </div>
         <script src="../prettify.js"></script>
         <script>
